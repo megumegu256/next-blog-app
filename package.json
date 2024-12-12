@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "isomorphic-dompurify": "^2.16.0",
     "next": "14.2.18",
     "react": "^18",
     "react-dom": "^18"
@@ -25,8 +26,10 @@
     "eslint-plugin-tailwindcss": "^3.17.5",
     "postcss": "^8",
     "pretier": "^0.0.1",
+    "prisma": "^6.0.1",
     "tailwind-merge": "^2.5.4",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
