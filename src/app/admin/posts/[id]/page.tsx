@@ -251,7 +251,7 @@ const Page: React.FC = () => {
         onSubmit={handleSubmit}
         className={twMerge("space-y-4", isSubmitting && "opacity-50")}
       >
-        <div className="space-y-1">
+        <div className="space-y-1 rounded-md bg-cyan-700 p-2 text-white">
           <label htmlFor="title" className="block font-bold">
             タイトル
           </label>
@@ -259,7 +259,7 @@ const Page: React.FC = () => {
             type="text"
             id="title"
             name="title"
-            className="w-full rounded-md border-2 bg-cyan-700 px-2  py-1 text-white"
+            className="w-full rounded-md border-2 px-2  py-1 text-black"
             value={newTitle}
             onChange={updateNewTitle}
             placeholder="タイトルを記入してください"
@@ -267,14 +267,14 @@ const Page: React.FC = () => {
           />
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-1 rounded-md bg-cyan-700 p-2 text-white">
           <label htmlFor="content" className="block font-bold">
             本文
           </label>
           <textarea
             id="content"
             name="content"
-            className="h-48 w-full rounded-md border-2 bg-cyan-700 px-2 py-1 text-white"
+            className="h-48 w-full rounded-md border-2 px-2 py-1 text-black"
             value={newContent}
             onChange={updateNewContent}
             placeholder="本文を記入してください"
@@ -282,7 +282,7 @@ const Page: React.FC = () => {
           />
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-1 rounded-md bg-cyan-700 p-2 text-white">
           <label htmlFor="coverImageURL" className="block font-bold">
             カバーイメージ (URL)
           </label>
@@ -290,7 +290,7 @@ const Page: React.FC = () => {
             type="url"
             id="coverImageURL"
             name="coverImageURL"
-            className="w-full rounded-md border-2 bg-cyan-700 px-2 py-1 text-white"
+            className="w-full rounded-md border-2 px-2 py-1 text-black"
             value={newCoverImageURL}
             onChange={updateNewCoverImageURL}
             placeholder="カバーイメージのURLを記入してください"
