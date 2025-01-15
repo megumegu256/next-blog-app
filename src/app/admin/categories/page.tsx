@@ -5,6 +5,7 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { twMerge } from "tailwind-merge";
 import { Category } from "@/app/_types/Category";
 import Link from "next/link";
+import { faPencil, faEraser, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 // カテゴリをフェッチしたときのレスポンスのデータ型
 type RawApiCategoryResponse = {
@@ -127,7 +128,8 @@ const Page: React.FC = () => {
               "disabled:cursor-not-allowed disabled:opacity-50"
             )}
           >
-            カテゴリの新規作成
+            カテゴリの新規作成 |
+            <FontAwesomeIcon icon={faPlus} className="ml-1 text-white" />
           </button>
         </Link>
       </div>
@@ -143,7 +145,7 @@ const Page: React.FC = () => {
               <div
                 key={category.id}
                 className={twMerge(
-                  "border border-slate-400 p-3",
+                  "rounded-md border border-slate-400 bg-cyan-700 p-3 text-white",
                   "flex items-center justify-between",
                   "font-bold"
                 )}
@@ -162,7 +164,11 @@ const Page: React.FC = () => {
                         "bg-indigo-500 text-white hover:bg-indigo-600"
                       )}
                     >
-                      編集
+                      編集 |
+                      <FontAwesomeIcon
+                        icon={faPencil}
+                        className=" text-white"
+                      />
                     </button>
                   </Link>
                   <button
@@ -175,7 +181,8 @@ const Page: React.FC = () => {
                       handleDelete(category);
                     }}
                   >
-                    削除
+                    削除 |
+                    <FontAwesomeIcon icon={faEraser} className=" text-white" />
                   </button>
                 </div>
               </div>

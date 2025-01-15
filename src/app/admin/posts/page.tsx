@@ -6,12 +6,15 @@ import Link from "next/link";
 import AdminPostSummary from "@/app/_components/AdminPostSummary";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faSort } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { twMerge } from "tailwind-merge";
 
 const Page: React.FC = () => {
   const [posts, setPosts] = useState<Post[] | null>(null);
   const [fetchError, setFetchError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSorted, setIsSorted] = useState(false);
 
   const fetchPosts = useCallback(async () => {
     try {
@@ -48,6 +51,19 @@ const Page: React.FC = () => {
     }
   }, []);
 
+  const handleSort = () => {
+    setPosts((prevPosts) => {
+      if (!prevPosts) return null;
+      const sortedPosts = [...prevPosts].sort((a, b) =>
+        isSorted
+          ? new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+          : new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+      );
+      return sortedPosts;
+    });
+    setIsSorted(!isSorted);
+  };
+
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
@@ -73,7 +89,20 @@ const Page: React.FC = () => {
     <main>
       <div className="text-2xl font-bold">投稿記事の管理</div>
 
-      <div className="mb-3 flex items-end justify-end">
+      <div className="mb-3 flex items-end justify-end space-x-2">
+        <button
+          type="button"
+          className={twMerge(
+            "rounded-md px-5 py-1 font-bold",
+            "bg-green-600 text-white hover:bg-green-700",
+            "disabled:cursor-not-allowed disabled:opacity-50"
+          )}
+          onClick={handleSort}
+        >
+          投稿日でソート |
+          <FontAwesomeIcon icon={faSort} className="ml-1 text-white" />
+        </button>
+
         <Link href="/admin/posts/new">
           <button
             type="submit"
@@ -83,7 +112,8 @@ const Page: React.FC = () => {
               "disabled:cursor-not-allowed disabled:opacity-50"
             )}
           >
-            新規作成
+            新規作成 |
+            <FontAwesomeIcon icon={faPlus} className="ml-1 text-white" />
           </button>
         </Link>
       </div>

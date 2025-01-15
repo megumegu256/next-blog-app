@@ -4,6 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { twMerge } from "tailwind-merge";
+import { faEraser, faRefresh } from "@fortawesome/free-solid-svg-icons";
 
 // カテゴリをフェッチしたときのレスポンスのデータ型
 type RawApiCategoryResponse = {
@@ -258,7 +259,7 @@ const Page: React.FC = () => {
             type="text"
             id="title"
             name="title"
-            className="w-full rounded-md border-2 px-2 py-1"
+            className="w-full rounded-md border-2 bg-cyan-700 px-2  py-1 text-white"
             value={newTitle}
             onChange={updateNewTitle}
             placeholder="タイトルを記入してください"
@@ -273,7 +274,7 @@ const Page: React.FC = () => {
           <textarea
             id="content"
             name="content"
-            className="h-48 w-full rounded-md border-2 px-2 py-1"
+            className="h-48 w-full rounded-md border-2 bg-cyan-700 px-2 py-1 text-white"
             value={newContent}
             onChange={updateNewContent}
             placeholder="本文を記入してください"
@@ -289,7 +290,7 @@ const Page: React.FC = () => {
             type="url"
             id="coverImageURL"
             name="coverImageURL"
-            className="w-full rounded-md border-2 px-2 py-1"
+            className="w-full rounded-md border-2 bg-cyan-700 px-2 py-1 text-white"
             value={newCoverImageURL}
             onChange={updateNewCoverImageURL}
             placeholder="カバーイメージのURLを記入してください"
@@ -302,7 +303,10 @@ const Page: React.FC = () => {
           <div className="flex flex-wrap gap-x-3.5">
             {checkableCategories!.length > 0 ? (
               checkableCategories!.map((c) => (
-                <label key={c.id} className="flex space-x-1">
+                <label
+                  key={c.id}
+                  className="flex space-x-1 rounded-md bg-green-600 px-2 py-1 text-white"
+                >
                   <input
                     id={c.id}
                     type="checkbox"
@@ -329,7 +333,8 @@ const Page: React.FC = () => {
             )}
             disabled={isSubmitting}
           >
-            記事を更新
+            記事を更新 |
+            <FontAwesomeIcon icon={faRefresh} className="ml-1 text-white" />
           </button>
 
           <button
@@ -340,7 +345,8 @@ const Page: React.FC = () => {
             )}
             // onClick={handleDelete}
           >
-            削除
+            削除 |
+            <FontAwesomeIcon icon={faEraser} className="ml-1 text-white" />
           </button>
         </div>
       </form>

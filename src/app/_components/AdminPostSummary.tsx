@@ -5,6 +5,12 @@ import dayjs from "dayjs";
 import { twMerge } from "tailwind-merge";
 import DOMPurify from "isomorphic-dompurify";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEraser,
+  faPencil,
+  faCalendar,
+} from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   post: Post;
@@ -51,9 +57,12 @@ const AdminPostSummary: React.FC<Props> = (props) => {
   };
 
   return (
-    <div className="border border-slate-400 p-3">
+    <div className="rounded-md border border-slate-400 bg-cyan-700 p-3 text-white">
       <div className="flex items-center justify-between">
-        <div>{dayjs(post.createdAt).format(dtFmt)}</div>
+        <div className="flex items-center space-x-1.5">
+          <FontAwesomeIcon icon={faCalendar} />
+          <div>{dayjs(post.createdAt).format(dtFmt)}</div>
+        </div>
         <div className="flex space-x-1.5">
           {post.categories.map((category) => (
             <div
@@ -61,7 +70,7 @@ const AdminPostSummary: React.FC<Props> = (props) => {
               className={twMerge(
                 "rounded-md px-2 py-0.5",
                 "text-xs font-bold",
-                "border border-slate-400 text-slate-500"
+                "border border-slate-400 bg-white text-slate-500"
               )}
             >
               <Link href={`/admin/categories/${category.id}`}>
@@ -72,7 +81,7 @@ const AdminPostSummary: React.FC<Props> = (props) => {
         </div>
       </div>
       <Link href={`/posts/${post.id}`}>
-        <div className="mb-1 text-lg font-bold">{post.title}</div>
+        <div className="mb-1 text-lg font-bold ">{post.title}</div>
         <div
           className="line-clamp-3"
           dangerouslySetInnerHTML={{ __html: safeHTML }}
@@ -87,7 +96,8 @@ const AdminPostSummary: React.FC<Props> = (props) => {
               "bg-indigo-500 text-white hover:bg-indigo-600"
             )}
           >
-            編集
+            編集 |
+            <FontAwesomeIcon icon={faPencil} className=" text-white" />
           </button>
         </Link>
 
@@ -101,7 +111,8 @@ const AdminPostSummary: React.FC<Props> = (props) => {
             handleDelete(post);
           }}
         >
-          削除
+          削除 |
+          <FontAwesomeIcon icon={faEraser} className=" text-white" />
         </button>
       </div>
     </div>
