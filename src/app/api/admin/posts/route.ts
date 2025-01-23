@@ -3,6 +3,8 @@ import { NextResponse, NextRequest } from "next/server";
 import { Post } from "@prisma/client";
 import { Prisma } from "@prisma/client";
 
+import { supabase } from "@/utils/supabase"; // ◀ 追加
+
 type RequestBody = {
   title: string;
   content: string;
@@ -74,6 +76,13 @@ type RequestBody = {
 // };
 
 export const POST = async (req: NextRequest) => {
+  // JWTトークンの検証・認証 (失敗したら 401 Unauthorized を返す)
+  const token = req.headers.get("Authorization") ?? "";
+  const { data, error } = await supabase.auth.getUser(token);
+  if (error)
+    return NextResponse.json({ error: error.message }, { status: 401 });
+
+  // 以下、投稿記事テーブルにレコードを追加する処理 (変更なし)
   try {
     const requestBody: RequestBody = await req.json();
     const { title, content, coverImageURL, categoryIds } = requestBody;
