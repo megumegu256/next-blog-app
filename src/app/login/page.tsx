@@ -117,7 +117,7 @@ const Page: React.FC = () => {
         </div>
 
         <div className="text-center">
-          ※ログインID、パスワードともに"admin@example.com"で認証が可能です。
+          ※ログインID、パスワードともに&quot;admin@example.com&quot;で認証が可能です。
         </div>
       </form>
     </main>
