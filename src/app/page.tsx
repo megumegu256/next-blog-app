@@ -26,7 +26,7 @@ const Page: React.FC = () => {
           },
         });
         if (!response.ok) {
-          throw new Error("データの取得に失敗しました");
+          throw new Error(`データの取得に失敗しました: ${response.statusText}`);
         }
         const data = await response.json();
         setPosts(data.contents as Post[]);
