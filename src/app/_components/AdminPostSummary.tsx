@@ -20,7 +20,7 @@ type Props = {
 
 const AdminPostSummary: React.FC<Props> = (props) => {
   const { post } = props;
-  const dtFmt = "YYYY-MM-DD";
+  const dtFmt = "YYYY-MM-DD HH:mm";
   const safeHTML = DOMPurify.sanitize(post.content, {
     ALLOWED_TAGS: ["b", "strong", "i", "em", "u", "br"],
   });

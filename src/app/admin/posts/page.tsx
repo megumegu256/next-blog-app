@@ -5,9 +5,7 @@ import type { PostApiResponse } from "@/app/_types/PostApiResponse";
 import Link from "next/link";
 import AdminPostSummary from "@/app/_components/AdminPostSummary";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { faSort } from "@fortawesome/free-solid-svg-icons";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faSpinner, faSort, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { twMerge } from "tailwind-merge";
 
 const Page: React.FC = () => {

@@ -111,7 +111,7 @@ const Page: React.FC = () => {
             )}
             onClick={handleGuestLogin}
           >
-            ゲストアカウント入力
+            ゲストアカウント情報入力
           </button>
           <button
             type="submit"
