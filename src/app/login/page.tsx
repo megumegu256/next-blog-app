@@ -54,6 +54,11 @@ const Page: React.FC = () => {
     }
   };
 
+  const handleGuestLogin = () => {
+    setEmail("admin@example.com");
+    setPassword("admin@example.com");
+  };
+
   return (
     <main>
       <div className="mb-2 text-2xl font-bold">ログイン</div>
@@ -97,7 +102,17 @@ const Page: React.FC = () => {
           />
         </div>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end space-x-2">
+          <button
+            type="button"
+            className={twMerge(
+              "rounded-md px-5 py-1 font-bold",
+              "bg-gray-500 text-white hover:bg-gray-600"
+            )}
+            onClick={handleGuestLogin}
+          >
+            ゲストアカウント入力
+          </button>
           <button
             type="submit"
             className={twMerge(
@@ -114,10 +129,6 @@ const Page: React.FC = () => {
           >
             ログイン
           </button>
-        </div>
-
-        <div className="text-center">
-          ※ログインID、パスワードともに&quot;admin@example.com&quot;で認証が可能です。
         </div>
       </form>
     </main>

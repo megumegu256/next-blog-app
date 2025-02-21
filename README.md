@@ -1,10 +1,18 @@
-# アプリの名前
+# DIA BLOG
 
-- 概要。どのような利用者を想定した、どのようなアプリなのかを記述する。
-- 開発の背景・経緯
-  - 特に完全オリジナルのアプリ開発の場合は、記載しないともったいない。
-  - 課題発見能力、課題解決能力、人となりなどを見てもらえます。
-- 公開 URL
+## 概要
+
+- アプリ名: "DIA BLOG"
+- このアプリは、普段の生活や日常の名 k で起きた出来事の記録や日記等、考えたことや感じたことを様々な人に共有することを主な使用用途とし、一般の人々を対象としている。
+- "DIA BLOG"というアプリ名は、宝石のダイヤモンドの"**Dia**mond"と、日記を意味する"**Dia**ry"から由来する。
+
+## 開発の背景・経緯
+
+- 開発者は以前にウェブブラウザで実行されるフロントエンド部分のみで完結する Todo アプリの開発を通じ、「React」を使ったモダンウェブ開発の基礎について学んだ。今回開発を行ったこのアプリは、Next.js をフレームワークとして使用し、サーバ上で実行されるバックエンド部分を含めた「本格的なモダンウェブアプリ開発」 について体験的に学ぶことを目的としている。
+
+## 公開 URL
+
+https://next-blog-app-megumegu256.vercel.app/
 
 ## 特徴と機能の説明
 
@@ -16,11 +24,24 @@
 ## 使用技術 (技術スタック)
 
 - 使用した言語やフレームワーク
-  - 少なくとも TypeScript と Next.js、Prisma は書いておくべき。
-  - その他、アプリを構成する主要なライブラリなどを記載する。
-  - ReReact Hook Form や zod、SWR を使っている場合は明示する。
-- 開発に使用したツールやウェブサービス
-  - VSCode、Supabase、Vercel は書いておくべき。
+  - TypeScript -
+  - Next.js -
+  - Prisma -
+- ライブラリ
+  - @fortawesome/fontawesome-svg-core: FontAwesome の SVG アイコンを使用するためのコアライブラリ。
+  - @fortawesome/free-solid-svg-icons: FontAwesome の無料のソリッドアイコンセット。
+  - @fortawesome/react-fontawesome: React で FontAwesome アイコンを使用するためのコンポーネント。
+  - @prisma/client: Prisma のクライアントライブラリ。データベースとのやり取りを簡単にするための ORM。
+  - @supabase/supabase-js: Supabase の JavaScript クライアントライブラリ。認証やデータベース操作を行うために使用。
+  - crypto-js: JavaScript で暗号化やハッシュ化を行うためのライブラリ。
+  - isomorphic-dompurify: サーバーサイドとクライアントサイドの両方で DOMPurify を使用するためのライブラリ。HTML のサニタイズに使用。
+  - next: Next.js フレームワーク。React ベースのサーバーサイドレンダリングと静的サイト生成をサポート。
+  - react: React ライブラリ。ユーザーインターフェースを構築するための JavaScript ライブラリ。
+  - react-dom: React の DOM 操作ライブラリ。React コンポーネントを DOM にレンダリングするために使用。
+- ツールやウェブサービス
+  - VSCode - コードエディタとして使用した。
+  - Supabase - バックエンドのデータベース・認証管理のため使用した。
+  - Vercel
 - システム構成図
 
 ## 開発期間・体制

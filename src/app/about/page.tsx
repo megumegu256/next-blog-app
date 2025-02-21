@@ -14,23 +14,19 @@ const Page: React.FC = () => {
         )}
       >
         <Image
-          src="/images/avatar.png"
+          src="/apple-icon.png"
           alt="Example Image"
           width={350}
           height={0} // Auto height (アスペクト比を保持)
           priority
-          className="rounded-full border-4 border-slate-500 p-1.5"
+          className=" border-4 border-slate-500 p-1.5"
         />
       </div>
 
       <div className="space-y-3">
         <div className="md:flex md:justify-center">
           <div className="font-bold md:w-1/6 md:text-center">名 前</div>
-          <div className="md:w-5/6">寝屋川 タヌキ</div>
-        </div>
-        <div className="md:flex md:justify-center">
-          <div className="font-bold md:w-1/6 md:text-center">連絡先</div>
-          <div className="md:w-5/6">tanuki.neyagawa@example.com</div>
+          <div className="md:w-5/6">富永 恵</div>
         </div>
         <div className="md:flex md:justify-center">
           <div className="font-bold md:w-1/6 md:text-center">
@@ -38,17 +34,13 @@ const Page: React.FC = () => {
           </div>
           <div className="md:w-5/6">
             <a
-              href="https://google.com"
+              href="https://megumegu256.github.io/portfolio/portfolio.html"
               className="mr-1 text-blue-500 underline"
             >
-              タヌキ&apos;s Portfolio
+              Megu&apos;s Portfolio
             </a>
             (GitHub Pages)
           </div>
-        </div>
-        <div className="md:flex md:justify-center">
-          <div className="font-bold md:w-1/6 md:text-center">自己紹介</div>
-          <div className="md:w-5/6">寝屋川 タヌキ</div>
         </div>
       </div>
     </main>
