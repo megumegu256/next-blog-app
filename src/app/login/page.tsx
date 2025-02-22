@@ -38,9 +38,7 @@ const Page: React.FC = () => {
         password,
       });
       if (error) {
-        setLoginError(
-          `ログインIDまたはパスワードが違います（${error.code}）。`
-        );
+        setLoginError(`ログインIDまたはパスワードが違います (${error.code})。`);
         console.error(JSON.stringify(error, null, 2));
         return;
       }
