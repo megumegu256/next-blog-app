@@ -70,7 +70,7 @@ const Page: React.FC = () => {
         <div className="space-y-1">
           <label htmlFor="email" className="block font-bold">
             <FontAwesomeIcon icon={faEnvelope} className="mr-1" />
-            ログインID（email）
+            ログインID (email)
           </label>
           <input
             type="text"
