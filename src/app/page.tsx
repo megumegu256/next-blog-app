@@ -91,7 +91,7 @@ const Page: React.FC = () => {
           )}
           onClick={handleSort}
         >
-          投稿日でソート |
+          投稿時間でソート |
           <FontAwesomeIcon icon={faSort} className="ml-1 text-white" />
         </button>
         <Link
